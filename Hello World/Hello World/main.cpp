@@ -1,23 +1,24 @@
 #include<iostream>
 using namespace std;
 
-int fib(int n)
+void fib(int n)
 {
-	if (n == 1 || n == 2) 
-	{
-		return n - 1;
-	}
-	else
-	{
-		return fib(n - 1) + fib(n - 2);
-	}
+    int fib_1 = 0, fib_2 = 1, a;
+    cout << fib_1 << endl;
+    cout << fib_2 << endl;
+    for (int i = 2; i < n; i++) {
+        a = fib_1;
+        fib_1 = fib_2;
+        fib_2 = a + fib_1;
+        cout << fib_2 << endl;
+    }
 }
 
 int main() {
-	cout << "Hellow World!" << endl;
-	
-	int n; cin >> n;
-	cout << fib(n);
+    cout << "Hellow World!" << endl;
 
-	return 0;
+    int n; cin >> n;
+    fib(n);
+
+    return 0;
 }
